@@ -1,0 +1,10 @@
+User-agent: *
+
+# Prevent indexing of tool-style URLs and query parameter variants.
+Disallow: /*?*
+Disallow: /claim/
+Disallow: /parent-feedback/
+
+Allow: /
+
+Sitemap: https://bestschoolbali.com/sitemap.xml

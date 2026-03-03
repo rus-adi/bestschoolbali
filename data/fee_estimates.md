@@ -1,0 +1,61 @@
+# Fee estimates (confirm with school)
+
+Generated: 2026-02-22 04:38
+
+Total: **55**
+
+- **Alam Atelier** (Canggu) — Rp 45,000,000–Rp 110,000,000 /year
+- **Alam Kidz School** (Ubud) — Rp 85,000,000–Rp 135,000,000 /year
+- **Amed Honeycomb School** (Amed) — Rp 50,000,000–Rp 100,000,000 /year
+- **Anak Bentala** (Canggu) — Rp 40,000,000–Rp 100,000,000 /year
+- **Bali Earth School** (Ubud) — Rp 80,000,000–Rp 150,000,000 /year
+- **Bali Life Daycare and Kindy** (Bukit Region) — Rp 35,000,000–Rp 85,000,000 /year
+- **Bamboo Garden Learning** (Canggu) — Rp 40,000,000–Rp 100,000,000 /year
+- **Bhumi Bali School** (Canggu) — Rp 60,000,000–Rp 150,000,000 /year
+- **Biosphere School** (Bukit Region) — Rp 60,000,000–Rp 150,000,000 /year
+- **Bloom Boutique Atelier** (Canggu) — Rp 45,000,000–Rp 110,000,000 /year
+- **Boundless Life Bali Education Centre** (Sanur) — Rp 223,200,000 /year
+- **Bukit Sunrise School** (Bukit Region) — Rp 80,000,000–Rp 160,000,000 /year
+- **Caterpillar School Bali** (Canggu) — Rp 60,000,000–Rp 150,000,000 /year
+- **Cheeky Monkeys Sanur** (Sanur) — Rp 60,000,000–Rp 150,000,000 /year
+- **Empathy School** (Ubud) — Rp 100,000,000–Rp 160,000,000 /year
+- **Erdkinder Sekolah Montessori Bali** (Ubud) — Rp 40,000,000–Rp 100,000,000 /year
+- **Gandhi Memorial** (Denpasar) — Rp 120,000,000–Rp 200,000,000 /year
+- **Harmony School** (Ubud) — Rp 40,000,000–Rp 100,000,000 /year
+- **Jimbaran Junior Academy** (Bukit Region) — Rp 80,000,000–Rp 170,000,000 /year
+- **Jungle Hub Ubud** (Ubud) — Rp 40,000,000–Rp 100,000,000 /year
+- **Kupu Kupu Early Learning Bali** (Canggu) — Rp 40,000,000–Rp 100,000,000 /year
+- **Little Dreamers** (Canggu) — Rp 40,000,000–Rp 100,000,000 /year
+- **Little Stars School** (Sanur) — Rp 60,000,000–Rp 150,000,000 /year
+- **Little Tree Preschool Bali** (Canggu) — Rp 40,000,000–Rp 100,000,000 /year
+- **Lychee Homeschooling** (Canggu) — Rp 60,000,000–Rp 120,000,000 /year
+- **Madu Waldorf Learning Center** (Ubud) — Rp 110,000,000–Rp 140,000,000 /year
+- **Malajah Playschool** (Canggu) — Rp 35,000,000–Rp 90,000,000 /year
+- **Malinki Kindergarten and Daycare Center** (Canggu) — Rp 35,000,000–Rp 85,000,000 /year
+- **Mama Kid Club** (Canggu) — Rp 60,000,000–Rp 150,000,000 /year
+- **Marigold Community Learning** (Canggu) — Rp 60,000,000–Rp 150,000,000 /year
+- **Matahari Canggu Childcare and Preschool** (Canggu) — Rp 35,000,000–Rp 85,000,000 /year
+- **Montessori Farm Bali** (Canggu) — Rp 50,000,000–Rp 120,000,000 /year
+- **Morphoo School** (Canggu) — Rp 60,000,000–Rp 150,000,000 /year
+- **Oakwood STEAM Academy** (Canggu) — Rp 80,000,000–Rp 170,000,000 /year
+- **Rumah Kecil** (Sanur) — Rp 40,000,000–Rp 100,000,000 /year
+- **SENSE Garden Kids Center** (Sanur) — Rp 40,000,000–Rp 100,000,000 /year
+- **Sanur Independent School** (Sanur) — Rp 60,000,000–Rp 150,000,000 /year
+- **Saraswati Education Camp** (Canggu) — Rp 60,000,000–Rp 150,000,000 /year
+- **Sekolah Lentera Kasih (SLK) & Lollypop Preschool** (Canggu) — Rp 60,000,000–Rp 150,000,000 /year
+- **Skoebi-do Child Care Canggu** (Canggu) — Rp 35,000,000–Rp 85,000,000 /year
+- **Skoebi-do Child Care Sanur** (Sanur) — Rp 35,000,000–Rp 85,000,000 /year
+- **Skywalker Academy** (Canggu) — Rp 80,000,000–Rp 170,000,000 /year
+- **Spark Bali** (Ubud) — Rp 120,000,000–Rp 160,000,000 /year
+- **Sun School Bali** (Canggu) — Rp 60,000,000–Rp 150,000,000 /year
+- **Taruwara Primary School** (Sanur) — Rp 50,000,000–Rp 120,000,000 /year
+- **The Anak Atelier Early Learning Centre** (Bukit Region) — Rp 45,000,000–Rp 110,000,000 /year
+- **The Garden Bali** (Canggu / Sanur) — Rp 40,000,000–Rp 100,000,000 /year
+- **The Open Flow - Learning Centre** (Ubud) — Rp 60,000,000–Rp 160,000,000 /year
+- **The Summit Academy** (Denpasar) — Rp 80,000,000–Rp 170,000,000 /year
+- **Ubud High** (Ubud) — Rp 40,000,000–Rp 80,000,000 /year
+- **Ubud Little Sunshine** (Ubud) — Rp 40,000,000–Rp 100,000,000 /year
+- **Umah Rare Homeschool** (Sanur) — Rp 48,000,000 /year
+- **Umalas Kids Club** (Canggu) — Rp 40,000,000–Rp 100,000,000 /year
+- **Wisdom Academy** (Bukit Region) — Rp 80,000,000–Rp 170,000,000 /year
+- **Wood School** (Ubud) — Rp 100,000,000–Rp 160,000,000 /year
