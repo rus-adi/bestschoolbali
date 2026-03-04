@@ -47,6 +47,8 @@ export type School = {
     quote: string;
     label: string;
     is_example?: boolean;
+    /** Optional local video clip path (e.g. "/videos/parents/<id>-1.mp4"). */
+    video?: string;
   }>;
 
   /** Optional verification/paid placement fields (for future monetization). */

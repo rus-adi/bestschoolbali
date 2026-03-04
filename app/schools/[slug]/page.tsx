@@ -268,6 +268,7 @@ export default async function SchoolPage({ params }: { params: { slug: string } 
 
   const claimUrl = `/claim/${school.id}`;
   const feedbackUrl = `/parent-feedback/${school.id}`;
+  const parentVideoFallback = "/videos/parent-perspective-placeholder.mp4";
   const whatsappGuidance = `https://wa.me/62111111?text=${encodeURIComponent(
     `Hi — can you help me shortlist schools? I’m looking at ${school.name} in ${school.area}.`,
   )}`;
@@ -434,6 +435,14 @@ export default async function SchoolPage({ params }: { params: { slug: string } 
             <div className="quoteGrid">
               {school.parent_perspectives.slice(0, 5).map((q, idx) => (
                 <figure key={idx} className="quoteCard">
+                  <video
+                    className="quoteVideo"
+                    controls
+                    preload="none"
+                    playsInline
+                    poster={banner}
+                    src={q.video ?? parentVideoFallback}
+                  />
                   <blockquote>{q.quote}</blockquote>
                   <figcaption className="small">
                     — {q.label}
@@ -450,6 +459,14 @@ export default async function SchoolPage({ params }: { params: { slug: string } 
           </>
         ) : (
           <>
+            <div className="quoteGrid" style={{ marginBottom: 12 }}>
+              {[0, 1, 2].map((i) => (
+                <figure key={i} className="quoteCard">
+                  <video className="quoteVideo" controls preload="none" playsInline poster={banner} src={parentVideoFallback} />
+                  <figcaption className="small">Short parent story video (30s sample)</figcaption>
+                </figure>
+              ))}
+            </div>
             <p className="small" style={{ marginTop: 0 }}>
               We’re collecting short, anonymized notes from families. If you have experience with this school, you can share a
               few lines and we’ll publish it without personal details.
