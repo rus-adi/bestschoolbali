@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import NavToggle from "../components/NavToggle";
 
 const SITE_URL = "https://bestschoolbali.com";
+const GTM_CONTAINER_ID = "GTM-NCL3KMTW";
+const GA_MEASUREMENT_ID = "G-753DZKBTTG";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -55,7 +57,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
+      <head>
+        {/* Google Tag Manager */}
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js',ga_measurement_id:'${GA_MEASUREMENT_ID}'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_CONTAINER_ID}');`,
+          }}
+        />
+        {/* End Google Tag Manager */}
+      </head>
       <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_CONTAINER_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+
         <header className="siteHeader">
           <div className="container headerInner">
             <a href="/" className="brand" aria-label="Best School Bali">
@@ -147,6 +174,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify([orgJsonLd, siteJsonLd]) }}
+        />
+
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `document.addEventListener("click", function(e) {
+  const button = e.target.closest("button, a");
+  if (!button) return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "button_click",
+    button_text: button.innerText || "",
+    button_url: button.href || "",
+    page_path: window.location.pathname,
+    ga_measurement_id: "${GA_MEASUREMENT_ID}"
+  });
+});`,
+          }}
         />
       </body>
     </html>
