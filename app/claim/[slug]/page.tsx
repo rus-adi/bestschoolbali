@@ -28,7 +28,7 @@ export default function ClaimPage({ params }: { params: { slug: string } }) {
   if (!school) return <div className="container">Not found</div>;
 
   const message = `Hi Best School Bali — I’d like to claim and update the profile for ${school.name} (${school.area}).`;
-  const wa = `https://wa.me/62111111?text=${encodeURIComponent(message)}`;
+  const wa = `https://wa.me/6285285408220?text=${encodeURIComponent(message)}`;
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",

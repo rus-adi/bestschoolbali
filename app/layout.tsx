@@ -135,7 +135,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span aria-hidden="true">·</span>
               <a href="/terms">Terms</a>
               <span aria-hidden="true">·</span>
-              <a href="https://wa.me/62111111" rel="nofollow">
+              <a href="https://wa.me/6285285408220" rel="nofollow">
                 WhatsApp
               </a>
             </div>
