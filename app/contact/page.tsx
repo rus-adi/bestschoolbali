@@ -52,8 +52,8 @@ export default function ContactPage() {
           You can also message directly. If you’re claiming a profile, please include an official school email.
         </p>
         <p style={{ marginBottom: 0 }}>
-          <a className="btn btnPrimary" href="https://wa.me/62111111" rel="nofollow">
-            WhatsApp +62 111111
+          <a className="btn btnPrimary" href="https://wa.me/6285285408220" rel="nofollow">
+            WhatsApp +6285285408220
           </a>
         </p>
       </div>
