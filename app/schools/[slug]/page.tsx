@@ -269,7 +269,7 @@ export default async function SchoolPage({ params }: { params: { slug: string } 
   const claimUrl = `/claim/${school.id}`;
   const feedbackUrl = `/parent-feedback/${school.id}`;
   const parentVideoFallback = "/videos/parent-perspective-placeholder.mp4";
-  const whatsappGuidance = `https://wa.me/62111111?text=${encodeURIComponent(
+  const whatsappGuidance = `https://wa.me/6285285408220?text=${encodeURIComponent(
     `Hi — can you help me shortlist schools? I’m looking at ${school.name} in ${school.area}.`,
   )}`;
 

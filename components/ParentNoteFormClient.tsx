@@ -8,7 +8,7 @@ type SchoolLite = {
   area: string;
 };
 
-const WHATSAPP_NUMBER = "62111111";
+const WHATSAPP_NUMBER = "6285285408220";
 
 function buildWhatsAppUrl(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
