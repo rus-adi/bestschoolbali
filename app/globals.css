@@ -489,6 +489,7 @@ h3 {
   background-repeat: no-repeat;
   z-index: 1;
   pointer-events: none;
+  z-index: 1;
 }
 
 .homeHero::after {
@@ -514,16 +515,14 @@ h3 {
   align-items: center;
 }
 
-.homeHero .heroContent,
-.homeHero h1,
-.homeHero p {
+.homeHero .heroContent {
   position: relative;
   z-index: 2;
 }
 
 .homeHeroTitle {
   margin: 0;
-  color: #1f2937;
+  color: #ffffff;
   font-weight: 800;
   letter-spacing: -0.02em;
   position: relative;
@@ -532,13 +531,19 @@ h3 {
 }
 
 .accent {
-  color: var(--primary);
+  color: #ffffff;
+}
+
+.homeHero .homeHeroTitle,
+.homeHero .homeHeroSubtitle,
+.homeHero .homeHeroTitle .accent {
+  color: #ffffff;
 }
 
 .homeHeroSubtitle {
   margin: 8px 0 0 0;
   font-size: 1.08rem;
-  color: #374151;
+  color: #ffffff;
   font-weight: 500;
   position: relative;
   z-index: 2;
