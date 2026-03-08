@@ -9,6 +9,7 @@ import { remark } from "remark";
 import html from "remark-html";
 import { recommendGuides } from "../../../lib/posts";
 import { getAreaComparisonPairs } from "../../../lib/areaComparisons";
+import { buildSchoolInterestFormUrl } from "../../../lib/interestForm";
 
 export const dynamicParams = false;
 export const dynamic = "error";
@@ -238,7 +239,6 @@ export default async function SchoolPage({ params }: { params: { slug: string } 
     description: school.summary ?? undefined,
     image: `${SITE_URL}${schoolImage}`,
     areaServed: school.area,
-    sameAs: school.website ? [school.website] : undefined,
     telephone: school.details?.phone ?? undefined,
     email: school.details?.email ?? undefined,
     address: school.details?.address
@@ -269,7 +269,7 @@ export default async function SchoolPage({ params }: { params: { slug: string } 
   const claimUrl = `/claim/${school.id}`;
   const feedbackUrl = `/parent-feedback/${school.id}`;
   const parentVideoFallback = "/videos/parent-perspective-placeholder.mp4";
-  const whatsappGuidance = `https://wa.me/62111111?text=${encodeURIComponent(
+  const whatsappGuidance = `https://wa.me/6285285408220?text=${encodeURIComponent(
     `Hi — can you help me shortlist schools? I’m looking at ${school.name} in ${school.area}.`,
   )}`;
 
@@ -394,26 +394,12 @@ export default async function SchoolPage({ params }: { params: { slug: string } 
             </>
           ) : null}
 
-          {school.website ? (
-            <>
-              <div className="small">
-                <strong>Website</strong>
-              </div>
-              <div>
-                <a href={school.website} target="_blank" rel="noreferrer">
-                  {school.website}
-                </a>
-              </div>
-            </>
-          ) : null}
         </div>
 
         <div className="inlineLinks">
-          {school.website ? (
-            <a className="btn btnPrimary" href={school.website} target="_blank" rel="noreferrer">
-              Visit website
-            </a>
-          ) : null}
+          <a className="btn btnPrimary" href={buildSchoolInterestFormUrl(school.name)} target="_blank" rel="noreferrer">
+            Contact About This School
+          </a>
           {mapUrl ? (
             <a className="btn" href={mapUrl} target="_blank" rel="noreferrer">
               Open in Google Maps
@@ -429,7 +415,7 @@ export default async function SchoolPage({ params }: { params: { slug: string } 
       {school.summary ? <p style={{ marginTop: 16 }}>{school.summary}</p> : null}
 
       <div className="card" style={{ marginTop: 16 }}>
-        <h2 style={{ marginTop: 0 }}>Parent perspectives</h2>
+        <h2 style={{ marginTop: 0 }}>Best Schools Bali — Parent Perspectives</h2>
         {school.parent_perspectives?.length ? (
           <>
             <div className="quoteGrid">
