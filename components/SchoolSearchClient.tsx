@@ -3,6 +3,7 @@
 import React from 'react';
 import type { School } from '../lib/schools';
 import { slugify } from '../lib/slug';
+import { buildSchoolInterestFormUrl } from '../lib/interestForm';
 
 const COMPARE_STORAGE_KEY = 'bsb_compare_ids_v1';
 
@@ -174,7 +175,6 @@ export default function SchoolSearchClient({
         s.name,
         s.area,
         s.type ?? '',
-        s.website ?? '',
         s.budget_category ?? '',
         ...(s.curriculum_tags ?? []),
       ]
@@ -307,11 +307,9 @@ export default function SchoolSearchClient({
                 <a className="btn btnPrimary" href={`/schools/${s.id}`}>
                   View
                 </a>
-                {s.website ? (
-                  <a className="btn" href={s.website} target="_blank" rel="noreferrer">
-                    Website
-                  </a>
-                ) : null}
+                <a className="btn" href={buildSchoolInterestFormUrl(s.name)} target="_blank" rel="noreferrer">
+                  Share Interest
+                </a>
               </div>
             </div>
           );

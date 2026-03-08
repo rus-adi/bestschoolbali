@@ -11,7 +11,7 @@ Total: **17**
 - **Canggu Community School** (Canggu) — Rp 210,100,000–Rp 431,600,000 /year
 - **Dyatmika** (Sanur) — Rp 47,620,000–Rp 147,293,000 /year
 - **GROW in Kedungu** (Canggu) — Rp 114,800,000–Rp 139,800,000 /year
-- **Green School Bali** (Ubud) — Rp 177,800,000–Rp 319,030,000 /year
+- **Nature School Bali** (Ubud) — Rp 177,800,000–Rp 319,030,000 /year
 - **Joglo ClubHouse School** (Canggu) — Rp 119,600,000 /year
 - **Lycée Français de Bali** (Canggu) — Rp 58,900,000–Rp 156,900,000 /year
 - **Montessori School Bali** (Canggu) — Rp 110,678,000–Rp 180,647,580 /year

@@ -3,6 +3,7 @@
 import React from 'react';
 import type { School } from '../lib/schools';
 import { slugify } from '../lib/slug';
+import { buildSchoolInterestFormUrl } from '../lib/interestForm';
 
 const STORAGE_KEY = 'bsb_compare_ids_v1';
 
@@ -58,7 +59,7 @@ function buildCompareUrl(ids: string[]) {
   return `/compare?ids=${encodeURIComponent(clean.join(','))}`;
 }
 
-export default function CompareClient({ schools }: { schools: Array<Pick<School, 'id' | 'name' | 'area' | 'type' | 'fees' | 'budget_category' | 'age_min' | 'age_max' | 'curriculum_tags' | 'website' | 'map_query' | 'summary'>> }) {
+export default function CompareClient({ schools }: { schools: Array<Pick<School, 'id' | 'name' | 'area' | 'type' | 'fees' | 'budget_category' | 'age_min' | 'age_max' | 'curriculum_tags' | 'map_query' | 'summary'>> }) {
   const byId = React.useMemo(() => new Map(schools.map((s) => [s.id, s] as const)), [schools]);
 
   const [ids, setIds] = React.useState<string[]>([]);
@@ -173,7 +174,7 @@ export default function CompareClient({ schools }: { schools: Array<Pick<School,
             className="input"
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="Type a school name (e.g., Green School, Canggu, Montessori)"
+            placeholder="Type a school name (e.g., Nature School, Canggu, Montessori)"
             aria-label="Search schools to add"
           />
 
@@ -291,16 +292,12 @@ export default function CompareClient({ schools }: { schools: Array<Pick<School,
                   ))}
                 </tr>
                 <tr>
-                  <th scope="row">Website</th>
+                  <th scope="row">Interest</th>
                   {selected.map((s) => (
                     <td key={s.id}>
-                      {s.website ? (
-                        <a href={s.website} target="_blank" rel="noreferrer">
-                          Open
-                        </a>
-                      ) : (
-                        '—'
-                      )}
+                      <a href={buildSchoolInterestFormUrl(s.name)} target="_blank" rel="noreferrer">
+                        Contact about this school
+                      </a>
                     </td>
                   ))}
                 </tr>
