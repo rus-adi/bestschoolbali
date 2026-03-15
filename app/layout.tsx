@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import NavToggle from "../components/NavToggle";
 
 const SITE_URL = "https://bestschoolbali.com";
-const GTM_CONTAINER_ID = "GTM-NCL3KMTW";
 const GA_MEASUREMENT_ID = "G-753DZKBTTG";
 
 export const metadata: Metadata = {
@@ -58,31 +57,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Google Tag Manager */}
+        {/* Google tag (gtag.js) */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
         <script
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js',ga_measurement_id:'${GA_MEASUREMENT_ID}'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${GTM_CONTAINER_ID}');`,
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');`,
           }}
         />
-        {/* End Google Tag Manager */}
       </head>
       <body>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_CONTAINER_ID}`}
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
-
         <header className="siteHeader">
           <div className="container headerInner">
             <a href="/" className="brand" aria-label="Best School Bali">
@@ -179,18 +167,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <script
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
-            __html: `document.addEventListener("click", function(e) {
-  const button = e.target.closest("button, a");
-  if (!button) return;
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: "button_click",
-    button_text: button.innerText || "",
-    button_url: button.href || "",
-    page_path: window.location.pathname,
-    ga_measurement_id: "${GA_MEASUREMENT_ID}"
+            __html: `(function () {
+  function getClickableTarget(el) {
+    if (!el || !el.closest) return null;
+    return el.closest('button, a');
+  }
+
+  function trackPageView() {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', 'page_view', {
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: window.location.pathname + window.location.search,
+    });
+  }
+
+  function trackClick(target) {
+    const payload = {
+      event_category: target.tagName === 'A' ? 'link' : 'button',
+      event_label: (target.innerText || target.getAttribute('aria-label') || '').trim(),
+      link_url: target.href || '',
+      page_path: window.location.pathname,
+    };
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'button_click', ...payload });
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'button_click', payload);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', trackPageView, { once: true });
+  } else {
+    trackPageView();
+  }
+
+  document.addEventListener('click', function (e) {
+    const target = getClickableTarget(e.target);
+    if (!target) return;
+    trackClick(target);
   });
-});`,
+})();`,
           }}
         />
       </body>
