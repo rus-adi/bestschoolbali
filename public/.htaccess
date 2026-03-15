@@ -1,0 +1,47 @@
+# Apache rewrite rules for static Next.js export on shared hosting (e.g. Hostinger)
+# Supports:
+# - Clean URLs for exported .html pages
+# - Nested static routes (/schools/acs-bali)
+# - Optional language prefixes (/en/..., /id/...)
+
+Options -MultiViews
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Allow existing files/directories directly (assets, images, js, css, etc.)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Common static assets should never be rewritten
+  RewriteRule \.(?:css|js|mjs|json|map|xml|txt|ico|png|jpe?g|gif|webp|svg|avif|mp4|webm|woff2?|ttf|eot)$ - [L,NC]
+
+  # Language root: /en -> /en/index.html (if exported)
+  RewriteCond %{REQUEST_URI} ^/([a-z]{2}(?:-[A-Z]{2})?)/?$ [NC]
+  RewriteCond %{DOCUMENT_ROOT}/%1/index.html -f
+  RewriteRule ^([a-z]{2}(?:-[A-Z]{2})?)/?$ $1/index.html [L]
+
+  # Language + path: /en/about -> /en/about.html (if exported)
+  RewriteCond %{REQUEST_URI} ^/([a-z]{2}(?:-[A-Z]{2})?)/(.+)$ [NC]
+  RewriteCond %{DOCUMENT_ROOT}/%1/%2.html -f
+  RewriteRule ^([a-z]{2}(?:-[A-Z]{2})?)/(.*)$ $1/$2.html [L]
+
+  # Language + nested index: /en/about/team -> /en/about/team/index.html (if exported)
+  RewriteCond %{REQUEST_URI} ^/([a-z]{2}(?:-[A-Z]{2})?)/(.+)$ [NC]
+  RewriteCond %{DOCUMENT_ROOT}/%1/%2/index.html -f
+  RewriteRule ^([a-z]{2}(?:-[A-Z]{2})?)/(.*)$ $1/$2/index.html [L]
+
+  # Clean URL: /about or /schools/acs-bali -> /about.html or /schools/acs-bali.html
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+
+  # Nested index fallback: /foo/bar -> /foo/bar/index.html (if exported that way)
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.+?)/?$ $1/index.html [L]
+
+  # Root fallback
+  RewriteRule ^$ index.html [L]
+</IfModule>
