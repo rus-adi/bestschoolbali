@@ -1,0 +1,32 @@
+# Hostinger / Apache rules for static Next.js export (`output: export`)
+# Tujuan:
+# - clean URL untuk static page (contoh: /blog/post)
+# - support struktur multilanguage berbasis folder/file (contoh: /id, /id/blog/post, /en/...)
+# - aman saat seluruh isi folder `out/` di-copy langsung ke Hostinger
+
+Options -MultiViews
+DirectoryIndex index.html
+RewriteEngine On
+RewriteBase /
+
+# 1) Jangan rewrite kalau file/folder memang ada (asset static, gambar, css, js, dll.)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 2) Canonical: sembunyikan index.html dari URL
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]
+
+# 3) Support route hasil export mode flat HTML: /path -> /path.html
+#    Termasuk route multilanguage: /id/about -> /id/about.html
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# 4) Support route berbasis folder: /path -> /path/index.html
+#    Berguna jika ada sebagian halaman diekspor sebagai folder.
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.+?)/?$ $1/index.html [L]
+
+# 5) Fallback ke halaman 404 hasil export
+RewriteRule ^ 404.html [L]
